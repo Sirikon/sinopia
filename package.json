@@ -72,8 +72,7 @@
 		"test": "eslint . && mocha ./test/functional ./test/unit",
 		"test-travis": "eslint . && mocha -R spec ./test/functional ./test/unit",
 		"test-only": "mocha ./test/functional ./test/unit",
-		"lint": "eslint .",
-		"clean-shrinkwrap": "node -e '\n  function clean(j) {\n    if (!j) return\n    for (var k in j) {\n      delete j[k].from\n      delete j[k].resolved\n      if (j[k].dependencies) clean(j[k].dependencies)\n    }\n  }\n  x = JSON.parse(require(\"fs\").readFileSync(\"./npm-shrinkwrap.json\"))\n  clean(x.dependencies)\n  x = JSON.stringify(x, null, \"  \")\n  require(\"fs\").writeFileSync(\"./npm-shrinkwrap.json\", x + \"\\n\")\n'\n"
+		"lint": "eslint ."
 	},
 	"engines": {
 		"node": ">=0.10"
